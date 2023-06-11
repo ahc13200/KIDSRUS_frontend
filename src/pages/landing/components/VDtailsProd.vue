@@ -20,12 +20,10 @@
 <script lang="ts">
     import {Icon} from '@iconify/vue'
     import VTabs from './VTabs.vue'
-    import VRelatedProducts from "./VRelatedProducts.vue";
 
     export default {
         name: 'VDtailsProd',
         components: {
-            VRelatedProducts,
             VTabs,
             Icon,
         },
