@@ -123,7 +123,15 @@
                 </div>
                 <div class="flex grid grid-cols-4 gap-20 my-20">
                     <div class="grid-rows-1" v-for="(item,index) in details.related" :key="index">
-                        <img :src="item.relatedPicture" alt="" class="h-150">
+                        <div class="relative">
+                            <img :src="item.relatedPicture" alt="" class="h-150">
+                            <div class="absolute top-4 right-4 text-shadow-md">
+                            <span v-if="item.ofstok"
+                                  class="inline-flex items-center rounded-xl bg-gray-50 px-3 py-2 !rounded-full text-md font-medium text-gray-600 ring-1 ring-inset ring-gray-200">
+                                OUT OF STOCK
+                            </span>
+                            </div>
+                        </div>
                         <div class="text-center my-2 font-bold">
                             <p class="mb-2 text-sm text-terracota-500">
                                 <span>{{item.category}}</span>
@@ -132,7 +140,7 @@
                                 <span>{{item.name}}</span>
                             </p>
                             <p class="mb-2 text-blue-900">
-                                <span>${{item.price}}</span>
+                                <span v-if="!item.ofstok">${{item.price}}</span>
                             </p>
                             <ul class="flex flex-wrap flex align-center justify-center">
                                 <li v-for="i in item.rating" :key="i">
