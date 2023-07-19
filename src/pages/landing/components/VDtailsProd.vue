@@ -55,7 +55,7 @@
                                 v-for="(item, index) in details.pictures"
                                 :key="index"
                                 :src="item.picture"
-                                class="h-30 mt-2"
+                                class="h-30 mt-2 hover:opacity-100"
                                 @click="setIndex(index)"
                         />
                     </div>
